@@ -338,7 +338,7 @@ void quiz8() {
 	cout << endl;
 	cout << "\t\t\t\t\tENTER YOUR CHOICE: ";
 	cin >> answer;
-	if (answer == "1" || answer == "2" || answer == "3" || answer == "4")
+	if (answer == "1" || answer == "2" || answer == "3")
 	{
 		if (answer == "1") {
 			total_score += 10;
@@ -347,7 +347,7 @@ void quiz8() {
 			cout << "You got 10 points out of 10." << endl;
 			
 		}
-		else if (answer == "2" || answer == "3" || answer == "4")
+		else if (answer == "2" || answer == "3")
 		{
 			cout << "W R O N G  A N S W E R !!!" << endl;
 			cout << "You got 0 points out of 10." << endl;
@@ -1267,31 +1267,6 @@ void onequiz9() {
 	}
 	else if (answer == "C" || answer == "c")
 	{
-		hints_used++;
-		system("cls");
-		cout << "Now you have chance to answer incorrectly. You will take 5 points for this question." << endl;
-		cout << "\t\t\t\t\tQ U E S T I O N  No. 9" << endl;
-	    cout << "The body of water where majority of the story takes place is?" << endl;
-	    cout << endl;
-	    cout << "[1] Calm Belt" << endl;
-	    cout << "[2] East Blue" << endl;
-	    cout << "[3] North Blue" << endl;
-	    cout << "[4] Grand Line" << endl;
-		string answer;
-		cout << endl;
-		cout << "\t\t\t\t\tENTER YOUR CHOICE: ";
-		cin >> answer;
-		total_score += 5;
-		correct_answer += 1;
-		if (answer == "4")
-			cout << "C O R R E C T   A N S W E R !!!" << endl;
-		cout << "You got 5 points out of 5." << endl;
-		cout << endl;
-		system("pause");
-		system("cls");
-		
-	}
-	else if (answer == "D" || answer == "d") {
 	hints_used++;
 	system("cls");
 	cout << "\t T H I S   I S  A  N E W   Q U E S T I O N. Y O U  W I L L  G E T  5  P O I N T S. " << endl;
@@ -1426,30 +1401,6 @@ void onequiz10() {
 	}
 	else if (answer == "C" || answer == "c")
 	{
-		hints_used++;
-		system("cls");
-		cout << "Nami is the Straw Hats's? You will take 5 points for this question." << endl;
-		cout << "\t\t\t\t\tQ U E S T I O N  No. 10" << endl;
-		cout << "Which is the first Doraemon film?" << endl;
-	    cout << "[1] Doctor" << endl;
-	    cout << "[2] Navigator" << endl;
-	    cout << "[3] Archaeologist" << endl;
-	    cout << "[4] Cook" << endl;
-		string answer;
-		cout << endl;
-		cout << "\t\t\t\t\tENTER YOUR CHOICE: ";
-		cin >> answer;
-		total_score += 5;
-		correct_answer += 1;
-		if (answer == "2")
-			cout << "C O R R E C T   A N S W E R !!!" << endl;
-		cout << "You got 5 points out of 5." << endl;
-		cout << endl;
-		system("pause");
-		system("cls");
-
-	}
-	else if (answer == "D" || answer == "d") {
 	hints_used++;
 		system("cls");
 		cout << "\t T H I S   I S  A  N E W   Q U E S T I O N. Y O U  W I L L  G E T  '5'  P O I N T S. " << endl;
@@ -1539,7 +1490,7 @@ void dequiz2() {
 	cout << "                                                                                     *****      TOTAL SCORE:" << total_score << "     *****" << endl;
 	cout << "                                                                                     ***********************************" << endl;
 	cout << "\t\t\t\t\t  Q U E S T I O N  No. 2" << endl;
-	cout << "Which of the characters below have claimed that they are “a living being who's infinitely close to perfection”?" << endl;
+	cout << "Which of the characters below have claimed that they are [a living being who's infinitely close to perfection]?" << endl;
 	cout << "[1] Rui" << endl;
 	cout << "[2] Akaza" << endl;
 	cout << "[3] Ruka Rengoku" << endl;
@@ -1584,7 +1535,7 @@ void dequiz3() {
 	cout << "\t\t\t\t\t  Q U E S T I O N  No. 3" << endl;
 	cout << "Who has already been revealed to have a very hard head?" << endl;
 	cout << "[1] Kamado Nezuko" << endl;
-	cout << "[2] Tanjiro's mother (unknown writer" << endl;
+	cout << "[2] Tanjiro's mother (unknown writer)" << endl;
 	cout << "[3] Usui Tengen" << endl;
 	cout << "[4] Agatsuma Zenitsu" << endl;
 	string answer;
@@ -1664,7 +1615,7 @@ void dequiz5() {
 	cout << "                                                                                     *****      TOTAL SCORE:" << total_score << "     *****" << endl;
 	cout << "                                                                                     ***********************************" << endl;
 	cout << "\t\t\t\t\t  Q U E S T I O N  No. 5" << endl; 
-	cout << "Who is known as the “Demon Child”?" << endl;
+	cout << "Who is known as the [Demon Child]?" << endl;
 	cout << "[1] Akaza" << endl;
 	cout << "[2] Enmu" << endl;
 	cout << "[3] Obanai lguro" << endl;
@@ -1934,9 +1885,9 @@ void dequiz9() {
 	cout << "                                                                                     ***********************************" << endl;
 	hints();
 	cout << "\t\t\t\t\t  Q U E S T I O N  No. 9" << endl;
-	cout << "How did Zenitsu’s hair color change? " << endl;
+	cout << "How did Zenitsu hair color change? " << endl;
 	cout << "[1] He was struck by lightning." << endl;
-	cout << "[2] She become a demon" << endl;
+	cout << "[2] He become a demon" << endl;
 	cout << "[3] A demon cursed him." << endl;
 	cout << "[4] He dyed it for attention." << endl;
 	string answer;
@@ -1999,9 +1950,9 @@ void dequiz9() {
 		hints_used++;
 		system("cls");
 		cout << "\t\t\t\t\t  Q U E S T I O N  No. 9" << endl;
-	    cout << "How did Zenitsu’s hair color change? " << endl;
+	    cout << "How did Zenitsu hair color change? " << endl;
 	    cout << "[1] He was struck by lightning." << endl;
-	    cout << "[2] She become a demon" << endl;
+	    cout << "[2] He become a demon" << endl;
 	    cout << "[3] A demon cursed him." << endl;
 	    cout << "[4] He dyed it for attention." << endl;
 		string answer1, answer2;
@@ -2031,7 +1982,7 @@ void dequiz9() {
 		system("cls");
 		cout << "\t T H I S   I S  A  N E W   Q U E S T I O N. Y O U  W I L L  G E T  5  P O I N T S. " << endl;
 		cout << endl;
-		cout << "What is the name of Tanjiro’s Kasugai Crow?" << endl;
+		cout << "What is the name of Tanjiro Kasugai Crow?" << endl;
 		cout << "[1] Ukogi" << endl;
 		cout << "[2] Aleister Crowley" << endl;
 		cout << "[3] Matsuemon Tennoji" << endl;
@@ -2417,7 +2368,7 @@ menu();
             return 0;
         default:
             cout << "Invalid choice. Please enter 1, 2, or 3." << endl;
-		    Sleep(2000);
+			Sleep(800);
 			main();
             break;
     }
@@ -2446,6 +2397,7 @@ void scores_table(){
         hints_used = 0;
 		    allthequiz();
 			congrate();
+			system("cls");
             scores_table();
 	}
 	else

@@ -16,6 +16,9 @@ string topic;
 int choice;
 bool playAgain=true;
 bool ask_for_name = true;
+ int width = 68;
+ int name_width = name.length();
+ int spaces = (width - name_width) / 2;
 void hints();
 void menu();
 int start();
@@ -2162,20 +2165,25 @@ void dequiz10() {
 
 void menu(){
      // Display the main menu options
-    system("color 0B");//Color XY,X = สีของพื้นหลัง,Y=สีของข้อความ
+    system("color 0A");//Color XY,X = สีของพื้นหลัง,Y=สีของข้อความ
     system("cls");
-	        cout<<"\n\n\n\t\t\t\t   __      __   ___  | |   ___    ___    _ __ ___     ___  "<<endl;
-			cout<<"\t\t\t\t   \\ \\ /\\ / /  / _ \\ | |  / __|  / _ \\  | '_ ` _ \\   / _ \\ "<<endl;
-			cout<<"\t\t\t\t    \\ V  V /  |  __/ | | | (__  | (_) | | | | | | | |  __/ "<<endl;
-			cout<<"\t\t\t\t     \\_/\\_/    \\___| |_|  \\___|  \\___/  |_| |_| |_|  \\___| "<<endl;
+	  cout<<"\n\n\n\t\t\t   __      __   ___  | |   ___    ___    _ __ ___     ___  "<<endl;
+			cout<<"\t\t\t   \\ \\ /\\ / /  / _ \\ | |  / __|  / _ \\  | '_ ` _ \\   / _ \\ "<<endl;
+			cout<<"\t\t\t    \\ V  V /  |  __/ | | | (__  | (_) | | | | | | | |  __/ "<<endl;
+			cout<<"\t\t\t     \\_/\\_/    \\___| |_|  \\___|  \\___/  |_| |_| |_|  \\___| "<<endl;
 
-	cout << endl;
-    cout << "\t\t\t\t\t\tWelcome to the Quiz Game!\t\t\t\t\t\t\t\t\t\t\t\t" << endl;
-    cout << "\t\t\t\t\t\t  1. Start Game\t\t\t\t\t\t\t\t\t\t\t\t" << endl;
-    cout << "\t\t\t\t\t\t  2. How to Play\t\t\t\t\t\t\t\t\t\t\t\t" << endl;
-    cout << "\t\t\t\t\t\t  3. Exit\t\t\t\t\t\t\t\t\t\t\t\t" << endl;
+	        cout<<"\t\t\t\t\n"<< "\t\t\t\t\tWelcome to the Quiz Game!\t"<<"             __";
+            cout<<"\t\t\t\t\n"<< "\t\t\t\t\t1. Start Game\t\t\t"<<"          __/o \\_";
+            cout<<"\t\t\t\t\n"<< "\t\t\t\t\t2. How to Play\t\t\t"<<"          \\____  \\";
+            cout<<"\t\t\t\t\n"<< "\t\t\t\t\t3. Exit\t\t\t"<<"                      /   \\";
+            cout<<"\t\t\t\t\t\n"<<"                                                                                __   //\\   \\"<<"";
+            cout<<"\t\t\t\t\t\n"<<"                                                                             __/o \\-//--\\   \\_/"<<"";
+            cout<<"\t\t\t\t\t\n"<<"                                                                             \\____  ___  \\  |"<<"";
+            cout<<"\t\t\t\t\t\n"<<"                                                                                  ||   \\ |\\ |"<<"";
+            cout<<"\t\t\t\t\t\n"<<"                                                                                 _||   _||_||"<<"";
+        	cout << endl;
 
-    cout <<"\t\t\t\t\t\tEnter your choice: ";
+    cout <<"\t\t\tEnter your choice: ";
     cin >> choice;
 
 }
@@ -2258,13 +2266,13 @@ void congrate() {
            cout<<"\t\t                  'V=_          -@@D         ,gY~ '"<<endl;
            cout<<"\t\t                      -=__.           ,__z=~`"<<endl;
            cout<<"\t\t                           ~~~*==Y*f~~~    "<<endl;
-           cout << "\t*************************************************************************************" << endl;
-	       cout << "\t*****                                                                           *****" << endl;
-	       cout << "\t*****                       C O N G R A T U L A T I O N S ! ! !                 *****" << endl;
-	       cout << "\t*****                = = = = = = = = "<< name   <<"= = = = = = = = =            *****" << endl;
-	       cout << "\t*****                            = = = = = = = = = = =                          *****" << endl;
-	       cout << "\t*****                                                                           *****" << endl;
-	       cout << "\t*************************************************************************************" << endl;
+           cout << "\t***********************************************************************************" << endl;
+           cout << "\t*****                                                                         *****" << endl;
+           cout << "\t*****                       C O N G R A T U L A T I O N S ! ! !               *****" << endl;
+           cout << "\t*****" << left << setw(spaces) << "" << name << right << setw(spaces) << "" << "*****" << endl;
+           cout << "\t*****                            = = = = = = = = = = =                        *****" << endl;
+           cout << "\t*****                                                                         *****" << endl;
+           cout << "\t***********************************************************************************" << endl;
 	       cout << endl;
 	       cout << "TOTAL SCORE: " << total_score << endl;
 	       cout << "YOU HAVE ANSWERED FOR '" << correct_answer << "' QUESTIONS OUT OF 10." << endl;
@@ -2276,11 +2284,12 @@ void congrate() {
 void howtoplay() {
 	system("cls");
 	system("color 0B");
-	cout<< "\t\t\t\t\t\t H  O  W  T  O  P  L  A  Y"<<endl;
+
+    cout<<"\033[47m\033[30m"<< "\t\t\t\t H  O  W  T  O  P  L  A  Y"<<"\033[0m\033[36m"<<endl;
     cout<<"   ___________________________________________________________________________________________"<<endl;
           cout<<" / \\                             	                                                       \\."<<endl;
            cout<<"|   |                                                                                          |."<<endl;
-           cout<<" \\_| 1.CHOOSE THE TOPIC QUESTIONS YOU ARE INTERESTED IN PLAYING.                              |."<<endl;
+           cout<<" \\_|  1.CHOOSE THE TOPIC QUESTIONS YOU ARE INTERESTED IN PLAYING.                              |."<<endl;
            cout<<"    |                                                                                          |."<<endl;
            cout<<"    | 2.YOU WILL EARN 10 POINTS WHEN YOU ANSWER THE CORRECT QUESTION.                          |."<<endl;
            cout<<"    |                                                                                          |."<<endl;
@@ -2288,7 +2297,7 @@ void howtoplay() {
            cout<<"    |    IF THE ANSWER IS CORRECT WHEN YOU USING HINTS YOU WILL ONLY  POINT.                   |."<<endl;
 		   cout<<"    |                                                                                          |."<<endl;
            cout<<"    | 4. AFTER PLAYING, THE SYSTEM WILL SORT THE SCORE.                                        |."<<endl;
-           cout<<"    |                            	                                                             |."<<endl;
+           cout<<"    |                            	                                                       |."<<endl;
            cout<<"    |   _______________________________________________________________________________________|."<<endl;
            cout<<"    |  /                                                                                       /."<<endl;
            cout<<"    \\_/______________________________________________________________________________________/."<<endl;

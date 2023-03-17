@@ -2215,6 +2215,7 @@ int start() {
       if (Respond == "Yes" || Respond == "yes") {
          cout << endl;
          cout << "OK, Good Luck!!! " << endl;
+		 system("cls");
 		 allthequiz();
          system("cls");
          return 1;

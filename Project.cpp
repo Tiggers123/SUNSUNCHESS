@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <windows.h>
+//include <windows.h>
 #include <iomanip>
 #include <vector>
 #include <algorithm>
@@ -2222,7 +2222,7 @@ int start() {
       } else {
 		 scores.push_back(total_score);
          cout << "OK. Goodbye." << endl;
-         return 0;
+         return 0; // Terminate the program
       }
    } else {
       cout << "I meant ONLY the ENTER key... Oh well.\n";
@@ -2366,11 +2366,11 @@ menu();
         case 3:
 			system("cls");
             cout << "Exiting the game..." << endl;
-			Sleep(2000);
+			//Sleep(2000);
             return 0;
         default:
             cout << "Invalid choice. Please enter 1, 2, or 3." << endl;
-			Sleep(800);
+			//Sleep(800);
 			main();
             break;
     }
@@ -2380,13 +2380,16 @@ menu();
 }
 
 void scores_table(){
-			sort(scores.rbegin(), scores.rend());
-			sort(names.rbegin(), names.rend());
+	vector<pair<int, string> > scoreNamePairs;
+    for (int i = 0; i < scores.size(); i++) {
+        scoreNamePairs.push_back(make_pair(scores[i], names[i]));
+    }
+    sort(scoreNamePairs.rbegin(), scoreNamePairs.rend());
 			cout << endl;
         	cout << "\t\tH I G H E S T   S C O R E S" << endl;
     		cout << "*********************************************************************" << endl;
             for (size_t i = 0; i < scores.size(); i++) {
-                cout << "*****  " << names[i] << "     ***" << "              ***  " << scores[i] << "    *****" << endl;
+                cout << "*****  "<< scoreNamePairs[i].second <<"     ***              ***     "<< scoreNamePairs[i].first << "    *****" << endl;
 			}
 				cout << endl; 
 	cout << "Do you want to start a QUIZ again? (Yes/No)" << endl;

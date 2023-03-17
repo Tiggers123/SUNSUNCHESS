@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-//include <windows.h>
+#include <windows.h>
 #include <iomanip>
 #include <vector>
 #include <algorithm>
@@ -2215,7 +2215,6 @@ int start() {
       if (Respond == "Yes" || Respond == "yes") {
          cout << endl;
          cout << "OK, Good Luck!!! " << endl;
-         system("cls");
 		 allthequiz();
          system("cls");
          return 1;
@@ -2366,11 +2365,11 @@ menu();
         case 3:
 			system("cls");
             cout << "Exiting the game..." << endl;
-			//Sleep(2000);
+			Sleep(2000);
             return 0;
         default:
             cout << "Invalid choice. Please enter 1, 2, or 3." << endl;
-			//Sleep(800);
+			Sleep(800);
 			main();
             break;
     }

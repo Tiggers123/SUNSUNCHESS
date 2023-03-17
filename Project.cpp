@@ -2190,45 +2190,46 @@ void menu(){
 
 int start() {
    if (cin.get() == '\n') {
-		system("cls");//โปรแกรมล้างจอภาพใหม่ Clear Screen เหมือนกับการ run โปรแกรมใหม่ 
-		cout << "\t\t\t\t\tI N F O R M A T I O N   T A B L E\n\n";
-		
-        cout << "Enter your name: ";
-        getline(cin, name);
-        names.push_back(name);
-	
-		cout << "Which topic would you like to play?"<<endl;
-		cout << "[1]. Doraemon" << endl;
-		cout << "[2]. Onepiece" << endl;
-		cout << "[3]. Demon slayer" << endl;
-		do {
-			cout << "Choose which topic you want to play: ";
-			cin >> topic;
-			cin.clear();
-		} while (topic != "1"&&topic!="2"&&topic!="3");
-		string Respond;
-		cout << endl;
-		cout << "Are you ready to take the Quiz " << name << " ? Yes = 'Yes'/No = 'Any key'. " << endl;
-		cout << "Your choice: ";
-		cin >> Respond;
-		if (Respond == "yes" || Respond == "Yes")
-		{
-			cout << endl;
-			cout << "OK, Good Like!!! " << endl;
-			system("cls");
-			return 1;
-		}
-		else
-		{
-			cout << "OK. Goodbye." << endl;
-			system("exit");//เป็นการบังคับให้โปรแกรมหยุดทำงานทันที
-			return 0;
-		}
-	}
-	else
-		cout << "I meant ONLY the ENTER key... Oh well.\n";
-	return 0;
-}    
+      system("cls");
+      cout << "\t\t\t\t\tI N F O R M A T I O N   T A B L E\n\n";
+      
+      cout << "Enter your name: ";
+      getline(cin, name);
+      names.push_back(name);
+   
+      cout << "Which topic would you like to play?"<<endl;
+      cout << "[1]. Doraemon" << endl;
+      cout << "[2]. Onepiece" << endl;
+      cout << "[3]. Demon slayer" << endl;
+      do {
+         cout << "Choose which topic you want to play: ";
+         cin >> topic;
+         cin.clear();
+      } while (topic != "1" && topic != "2" && topic != "3");
+      
+      string Respond;
+      cout << endl;
+      cout << "Are you ready to take the Quiz " << name << " ? Yes = 'Yes'/No = 'Any key'. " << endl;
+      cout << "Your choice: ";
+      cin >> Respond;
+      if (Respond == "Yes" || Respond == "yes") {
+         cout << endl;
+         cout << "OK, Good Luck!!! " << endl;
+         system("cls");
+		 allthequiz();
+         system("cls");
+         return 1;
+      } else {
+		 scores.push_back(total_score);
+         cout << "OK. Goodbye." << endl;
+         return 0;
+      }
+   } else {
+      cout << "I meant ONLY the ENTER key... Oh well.\n";
+   }
+   return 0;
+}
+
 
 void congrate() {
 	system("cls");
@@ -2311,7 +2312,6 @@ void howtoplay() {
 void scores_table();
 
 void allthequiz(){
-	start();
 	if(topic=="1"){
 		quiz1();
         quiz2();
@@ -2354,7 +2354,7 @@ menu();
     switch (choice) {
         case 1:
 			system("cls");
-		    allthequiz();
+		    start();
             congrate();
             system("cls");
             scores_table();
@@ -2381,6 +2381,7 @@ menu();
 
 void scores_table(){
 			sort(scores.rbegin(), scores.rend());
+			sort(names.rbegin(), names.rend());
 			cout << endl;
         	cout << "\t\tH I G H E S T   S C O R E S" << endl;
     		cout << "*********************************************************************" << endl;
@@ -2396,7 +2397,7 @@ void scores_table(){
 		total_score = 0;
         correct_answer = 0;
         hints_used = 0;
-		    allthequiz();
+			start();
 			congrate();
 			system("cls");
             scores_table();
